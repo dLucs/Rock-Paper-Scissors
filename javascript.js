@@ -1,12 +1,19 @@
 const selection = ['rock', 'paper', 'scissors'];
+
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorsButton = document.querySelector('#scissors');
+const resetButton = document.querySelector('#reset');
+
+rockButton.addEventListener('click', () => playRound())
+    playerSelection = 'rock'
+
    
 let playerCounter = 0;
 let computerCounter = 0;
 
 function playRound(){
 
-    let playerSelection = prompt('Please choose Rock, Paper, or Scissors: ').toLowerCase();
-    // if (selection.includes(playerSelection))
     
     let computerSelection = selection[Math.floor(Math.random() * selection.length)];
     
@@ -45,20 +52,20 @@ function playRound(){
 
 }
 
-function game(){
-    for (let i = 0; i < 5; i++){
-    console.log(playRound())
-    }
-    if (playerCounter > computerCounter){
-        console.log (playerCounter, ":", computerCounter, "You Win!")
-    }
-    else if (playerCounter < computerCounter){
-        console.log (playerCounter, ":", computerCounter, "You Lose!")
+// function game(){
+//     for (let i = 0; i < 5; i++){
+//     console.log(playRound())
+//     }
+//     if (playerCounter > computerCounter){
+//         console.log (playerCounter, ":", computerCounter, "You Win!")
+//     }
+//     else if (playerCounter < computerCounter){
+//         console.log (playerCounter, ":", computerCounter, "You Lose!")
     
-    }
-    else {
-        console.log(playerCounter, ":", computerCounter, "It's a Draw")
-    }
+//     }
+//     else {
+//         console.log(playerCounter, ":", computerCounter, "It's a Draw")
+//     }
 
-}
+// }
 
