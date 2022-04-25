@@ -6,7 +6,8 @@ const scissorsButton = document.querySelector('#scissors');
 const resetButton = document.querySelector('#reset');
 const player = document.querySelector('#player');
 const computer = document.querySelector('#computer');
-const winner = document.querySelector('#winner')
+const winner = document.querySelector('#winner');
+const playTo = document.querySelector('#playto');
 
 rockButton.addEventListener('click', () => playRound())
     playerSelection = 'rock';
@@ -116,12 +117,23 @@ function playRound(){
     }
 
 }
-resetButton.addEventListener('click', function(){
+//Reset game to starting values
+function reset(){
     isGameOver = false;
     playerScore = 0;
     computerScore = 0;
     player.textContent = 0;
     computer.textContent = 0;
-
+    winner.textContent = "";
+}
+//Set number of rounds
+playTo.addEventListener('change', function(){
+    winningScore = parseInt(this.value);
+    reset();
 })
+
+resetButton.addEventListener('click', reset)
+
+
+   
 
